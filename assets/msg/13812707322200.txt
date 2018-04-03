@@ -1,0 +1,38 @@
+Como Instalar a livraria:<br>
+Vá no disco onde instalou<br>
+Abra a pasta <b>Python34</b> de seguida a <b>Scripts</b><br>
+Ex:: <b>C:\Python34\Scripts</b><br>
+Depois dentro da pasta mantanha o Shift Pressionado e clique no Botão direito do rato<br>
+<img src="/assets/img/shift.png"><br>
+Depois digite o seguinte comando na consola:<br>
+<i><b>pip install pyMYSQL</b></i><br>
+Se aparecer o seguinte foi instaldo com sucesso<br>
+<img src="/assets/img/pymysql.png"><br><br>
+<h4><b>Agora como utilizar o mysql no python</b></h4>
+Ligar a Base Dados e Eliminar um campo<br>
+<pre class="prettyprint linenums:1">import pymysql
+conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='', db='produtos')
+cur = conn.cursor()
+cur.execute('DELETE FROM table WHERE id=exemplo')
+conn.commit
+cur.close()
+conn.close()
+</pre>
+Para Inserir Produtos Basta:
+<pre class="prettyprint linenums:1">cur.execute('''INSERT into scrap (link, sku,preco,nosso_preco,difere,descricao)
+                                  values (%s,%s,%s,%s,%s,%s)''',
+                                  (link,sku,preco_net,preco,difere,descricao))                        
+conn.commit();
+</pre>
+Para Fazer Update na Base Dados:
+<pre class="prettyprint linenums:1">import urllib.request
+import re
+import pymysql
+from bs4 import BeautifulSoup
+conn = pymysql.connect(host='localhost', port=3306, user='root', passwd='', db='produtos')
+cur = conn.cursor()
+ 
+cur.execute('''UPDATE scrap SET link=%s, sku=%s,anomalia=%s,descricao=%s where id=%s ''',
+                              ("link 45", "sku 9999","Fica igual","descricao alterada","1"))
+conn.commit();
+</pre>

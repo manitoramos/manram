@@ -1,0 +1,7 @@
+<p><pre class="prettyprint linenums:1">&lt;?php
+$str = "Is your name O'Reilly?";
+
+// Outputs: Is your name O\'Reilly?
+echo addslashes($str);
+?&gt;<br></pre>
+<a href="http://php.net/manual/en/function.addslashes.php">http://php.net/manual/en/function.addslashes.php</a></p>

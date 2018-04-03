@@ -1,0 +1,46 @@
+<pre class="prettyprint linenums:1">&lt;input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.."&gt;
+
+&lt;table id="myTable"&gt;
+  &lt;tr class="header"&gt;
+    &lt;th style="width:60%;"&gt;Name&lt;/th&gt;
+    &lt;th style="width:40%;"&gt;Country&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Alfreds Futterkiste&lt;/td&gt;
+    &lt;td&gt;Germany&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Berglunds snabbkop&lt;/td&gt;
+    &lt;td&gt;Sweden&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Island Trading&lt;/td&gt;
+    &lt;td&gt;UK&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;Koniglich Essen&lt;/td&gt;
+    &lt;td&gt;Germany&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;<br></pre>
+<pre class="prettyprint linenums:1">&lt;script&gt;
+function myFunction() {
+  // Declare variables 
+  var input, filter, table, tr, td, i;
+  input = document.getElementById("myInput");
+  filter = input.value.toUpperCase();
+  table = document.getElementById("myTable");
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 0; i &lt; tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[0];
+    if (td) {
+      if (td.innerHTML.toUpperCase().indexOf(filter) &gt; -1) {
+        tr[i].style.display = "";
+      } else {
+        tr[i].style.display = "none";
+      }
+    } 
+  }
+}
+&lt;/script&gt;<br></pre>

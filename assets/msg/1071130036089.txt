@@ -1,0 +1,63 @@
+<pre class="prettyprint linenums:1">	//value
+	var r = document.getElementById("import_hidden").value ;
+	var oTable = $('#dataTables-example').dataTable();
+	//call class to check if selected
+	var rowcollection =  oTable.$(".call-checkbox:checked", {"page": "all"});
+	//max length of table
+	r = r - 1;
+	//doing this until table not finished 
+	rowcollection.each(function(index,elem){ // index-&gt;row number  --  elem-&gt;html checkbox
+		console.log(index);
+		console.log(elem);
+		var checkbox_value = $(elem).val();
+		// row number
+		var x = checkbox_value - 2;
+		//fill data array with row information
+		var data = $('#dataTables-example').DataTable().row(x).data();
+		//row phone
+		var phone = data[0];
+		//row account
+		var account =data[1];
+		//row company
+		var company =data[2];
+
+		var http = new XMLHttpRequest();
+								
+		var parametros = "import=true&amp;phone=" + phone + "&amp;account=" + account +"&amp;company=" + company;
+				
+		http.open("POST", "assets/php/inser_excel.php", true);
+
+		//Send the proper header information along with the request
+		http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+		http.setRequestHeader("Content-length", parametros.length);
+		http.setRequestHeader("Connection", "close");
+
+		http.onreadystatechange = function() {//Call a function when the state changes.
+			if(http.readyState == 4 &amp;&amp; http.status == 200) {
+
+					if(http.responseText == "true"){
+						alertify.maxLogItems(1);
+						alertify.delay(0);
+						alertify.closeLogOnClick(true);
+						alertify.logPosition("bottom right");
+						alertify.success("Successful Insert!!");
+					}else if(http.responseText == "false"){
+						alertify.maxLogItems(1);
+						alertify.delay(0);
+						alertify.closeLogOnClick(true);
+						alertify.logPosition("bottom right");
+						alertify.error("Something Wrong!!");
+					}else{
+						alertify.maxLogItems(1);
+						alertify.delay(0);
+						alertify.closeLogOnClick(true);
+						alertify.logPosition("bottom right");
+						alertify.error("Something not Filled!!");
+						if(http.responseText == ""){}
+						else{alertify.error(http.responseText);}
+					}
+
+			}
+		}
+		http.send(parametros);
+	});<br></pre>

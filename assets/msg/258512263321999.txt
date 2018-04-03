@@ -1,0 +1,10 @@
+<pre class="prettyprint linenums:1">header("Location: http://manitoramos.pe.hu/manito.php?exemplo=1");
+#Para obter o valor:
+$_GET['exemplo'];#O que vamos obter vai ser 1
+
+#Ex2: Como Passar mais que 1 valor
+header("Location: http://manitoramos.pe.hu/manito.php?exemplo=1&amp;outro=4");
+
+$_GET['exemplo'];#1º valor #O que vamos obter vai ser 1
+$_GET['outro'];#2º valor #O que vamos obter vai ser 4
+#para passar mais que dois valores basta "&amp;" a seguir ao 4</pre>

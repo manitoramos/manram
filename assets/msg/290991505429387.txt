@@ -1,0 +1,18 @@
+<pre class="prettyprint linenums:1">function pubb(){
+		$.ajax({
+			type: "POST",
+			url: "./assets/php/publicar.php",
+			data: {action: 'test'},
+			success: function(result){
+				if(result == "true")
+				{
+						alertify.delay(0);
+						alertify.closeLogOnClick(true);
+						alertify.logPosition("bottom right");
+						alertify.success("Notícia Inserida Com Sucesso!");
+				}
+				// put on console what server sent back...
+			}
+		});
+	}<br></pre>
+<pre class="prettyprint linenums:1">&lt;a id="" name="publicar" class="btn btn-primary" onclick="pubb()"&gt;Publicar&lt;/a&gt;<br></pre>

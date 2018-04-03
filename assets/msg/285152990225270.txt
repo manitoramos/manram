@@ -1,0 +1,5 @@
+<pre class="prettyprint linenums:1">function somarValores(){
+        var s1 = document.getElementById("s1").value;
+        var s2 = document.getElementById("s2").value;
+        var s3 = parseInt(s1) + parseInt(s2);
+        alert(s3);<br></pre>

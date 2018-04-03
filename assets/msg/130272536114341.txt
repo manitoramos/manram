@@ -1,0 +1,1 @@
+<p><a style="color:blue" href="http://alertifyjs.org/">http://alertifyjs.com/</a><br></p>

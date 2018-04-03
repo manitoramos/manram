@@ -1,0 +1,1 @@
+<p>http://blog.thiagobelem.net/criptografando-senhas-no-php-usando-bcrypt-blowfish<br></p>

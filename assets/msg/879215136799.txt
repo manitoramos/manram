@@ -1,0 +1,5 @@
+<pre class="prettyprint linenums:1">if (file_exists($filename)){
+&nbsp;&nbsp;&nbsp;&nbsp;#fichiero existe
+} else {
+&nbsp;&nbsp;&nbsp;&nbsp;#fichiero nao existe
+}<br></pre>

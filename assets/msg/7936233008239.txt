@@ -1,0 +1,42 @@
+<h4>INSERIR:</h4>
+<pre class="prettyprint linenums:1">$server = "host"; //exemplo localhost
+$user = "userr";
+$senha = "pass";
+$bd = "nome basedados";
+		
+//para ligar ao servidor					
+$LIGA =@mysql_connect("$server","$user","$senha") or die ("servidor nao esta a responder!");
+
+//connectar a basedados							
+$db =@mysql_select_db($bd,$LIGA) or die ("Nao foi possivel conectar-se ao banco de dados!");
+
+//aqui podes fazer delete/update/inserir neste caso é um inserir							
+$SQL1 = "INSERT INTO programacao (tipo, titulo,mensagem) VALUES ('{$_POST['tipo']}', '{$_POST['titulo']}', '{$_POST['mensagem']}')";
+
+//isto faz a coneção da SQL1 ao servidor							
+$resultado1 =mysql_query($SQL1,$LIGA);
+
+</pre>
+<h4>SELECT:</h4>
+<pre class="prettyprint linenums:1">$server = "host";
+$user = "userr";
+$senha = "pass";
+$bd = "nome basedados";
+
+//para ligar ao servidor											
+$LIGA =@mysql_connect("$server","$user","$senha") or die ("servidor nao esta a responder!");
+
+//connectar a basedados												
+$db =@mysql_select_db($bd,$LIGA) or die ("Nao foi possivel conectar-se ao banco de dados!");																						
+
+$SQL1 = "SELECT * FROM programacao WHERE tipo='{$_GET["tipo"]}'";
+
+//isto faz a coneção da SQL1 ao servidor											
+$resultado1 =mysql_query($SQL1,$LIGA);
+											
+if($resultado1){								
+       while($registo1 = mysql_fetch_array($resultado1)){
+       echo "<a class="top" href="select.php?tipo={$_GET[" tipo']}&id="{$registo1[&quot;id&quot;]}'">{$registo1['titulo']}</a>{$registo1['tipo']}";
+       }
+}
+</pre>

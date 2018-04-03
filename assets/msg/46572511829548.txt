@@ -1,0 +1,2 @@
+<pre>$categ = utf8_decode($_POST['categorias']);
+//Basta isto se tiveres a usar o utf8</pre>

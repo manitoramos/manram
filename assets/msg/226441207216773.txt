@@ -1,0 +1,1 @@
+<pre class="prettyprint linenums:1">include ("exemplo.php ou .html");</pre>

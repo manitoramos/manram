@@ -1,0 +1,61 @@
+/*!
+ * Start Bootstrap - Blog Home (https://startbootstrap.com/template-overviews/blog-home)
+ * Copyright 2013-2017 Start Bootstrap
+ * Licensed under MIT (https://github.com/BlackrockDigital/startbootstrap-blog-home/blob/master/LICENSE)
+ */
+
+/* Footer fixed on bottom */
+html {
+  position: relative;
+  min-height: 100%;
+  /*min-height: 892.49989px;
+  border-bottom-color: green;
+  border-bottom: 1px solid;*/
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  /* Set the fixed height of the footer here */
+  height: 60px;
+  line-height: 59px; /* Vertically center the text there */
+}
+
+.footer > .container {
+  padding-right: 15px;
+  padding-left: 15px;
+}
+/* OUTRAS COISAS*/
+body {
+  padding-top: 54px;
+  margin-bottom: 60px;
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+/* Datatables Hits */
+.hits{
+  font-size: 11.5px;
+  padding: 1px 9px 2px;
+  background-color: #007399;
+  color: white;
+  border: 2px;
+  border-radius: 9px;
+}
+
+pre{
+  border-radius: 4px;
+  margin: 0 0 10px;
+  font-size: 13px;
+  background-color: #f5f5f5;
+  line-height: 1.42857143;
+  word-break: break-all;
+  word-wrap: break-word;
+  padding: 9.5px;
+}
+

@@ -1,0 +1,11 @@
+<p><b>CheckBox no Html:</b></p><p>
+</p><pre class="prettyprint linenums:1">&lt;input type="checkbox" name="box" value="umvalorqualquer"&gt;
+</pre>
+Verificar no PHP:
+<p></p><pre class="prettyprint linenums:1">if(isset($_POST['box'])){
+    echo "checkbox marcado!";
+    echo "valor: " . $_POST['box'];
+}
+else{
+    echo "checkbox não marcado! ";
+}</pre><p></p>

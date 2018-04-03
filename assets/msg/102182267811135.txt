@@ -1,0 +1,23 @@
+<p>#result mete o resultado do load</p><p>#content é o div que vai levar o load</p><pre class="prettyprint linenums:1">$( "#result" ).load( "ajax/test.html #content", function() {
+  alert( "Load was performed." );
+});
+
+
+
+$( "#result" ).load( "ajax/test.html" );
+
+
+
+
+&lt;b&gt;Successful Response (should be blank):&lt;/b&gt;
+&lt;div id="success"&gt;&lt;/div&gt;
+&lt;b&gt;Error Response:&lt;/b&gt;
+&lt;div id="error"&gt;&lt;/div&gt;
+ 
+&lt;script&gt;
+$( "#success" ).load( "/not-here.php", function( response, status, xhr ) {
+  if ( status == "error" ) {
+    var msg = "Sorry but there was an error: ";
+    $( "#error" ).html( msg + xhr.status + " " + xhr.statusText );
+  }
+});<br></pre>

@@ -1,0 +1,3 @@
+<pre class="prettyprint linenums:1"><font color="#303336">document.getElementById(message).style.display = "none";//to hide
+</font>
+document.getElementById(message).style.display = "inline";//to show<br></pre>

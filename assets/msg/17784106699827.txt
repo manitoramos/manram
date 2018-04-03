@@ -1,0 +1,31 @@
+<pre class="prettyprint linenums:1">session_start();
+
+	$server = "localhost";
+	$user = "root";
+	//$senha = "";
+	$bd = "loja";
+
+	$LIGA =@mysql_connect("$server","$user","") or die ("servidor nao esta a responder!");
+
+	$db =@mysql_select_db($bd,$LIGA) or die ("Nao foi possivel conectar-se ao banco de dados!");
+
+	$SQL1 = "SELECT * FROM users";
+
+	$resultado1 =mysql_query($SQL1,$LIGA);
+
+	while($registo1 = mysql_fetch_array($resultado1))
+	{
+		if($_GET['email'] == $registo1['Email'] &amp;&amp; $_GET['pass'] == $registo1['senha'])
+		{
+			$_SESSION['user'] = $registo1['user'];
+		}
+	}
+
+	if(!isset($_SESSION['user']))
+	{
+		header("Location: {$_SESSION['pagina']}");
+	}
+	else
+	{
+		header("Location: {$_SESSION['pagina']}");
+	}</pre>

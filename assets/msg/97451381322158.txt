@@ -1,0 +1,10 @@
+<pre class="prettyprint linenums:1">//preciso sempre em cada pagina que uses sessões e meter sempre antes do DOCTYPE a usar com html!
+session_start();
+
+//para criar uma variável basta isto ela auto deteta se é int,string etc quando lhe deres um valor
+$_SESSION["hey"];
+
+//para destruir uma sessão basta o seguinte código , mas tem em atenção que precisas do 
+//primeiro passo para fazer este!
+session_destroy();
+</pre>

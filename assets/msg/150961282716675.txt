@@ -1,0 +1,5 @@
+<pre class="prettyprint linenums:1">String value = "This is a string.";
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span style="color: blue;">int</span> startIndex = 5;
+      <span style="color: blue;">int</span> length = 2;
+      String substring = value.Substring(startIndex, length);
+      Console.WriteLine(substring);</pre>

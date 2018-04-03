@@ -1,0 +1,1 @@
+<p><a href="http://stackoverflow.com/questions/23266385/friendly-url-using-php-and-htaccess">http://stackoverflow.com/questions/23266385/friendly-url-using-php-and-htaccess</a><br></p>

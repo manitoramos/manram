@@ -1,0 +1,9 @@
+<pre class="prettyprint linenums:1">$string = 'abcdef';
+	
+	$i = 0;
+	
+	while($i &lt; 5)
+	{
+		echo $string{$i};
+		$i++;
+	}<br></pre>

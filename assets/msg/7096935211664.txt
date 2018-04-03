@@ -1,0 +1,3 @@
+Tira o primeiro e o ultimo caracter.<br>
+<pre class="prettyprint linenums:1">x = "ola"
+print x(x(1:-1))<br></pre>

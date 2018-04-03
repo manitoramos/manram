@@ -1,0 +1,24 @@
+<pre class="prettyprint linenums:1">//email automatico para dizer que a conta foi desativada
+$de = "broteronews@gmail.com";
+$headers = "From: BroteroNews &lt;".$de."&gt;\n";
+$headers .= "Content-Type: Text/HTML; charset=UTF-8\n";
+
+$mensagem = "Sua Conta da BroteroNews foi Desativada consulte o suporte para mais informação.";
+			
+$email = $_POST['email'];
+			
+// formatação da mensagem em HTML
+$mensagem = '&lt;html&gt;
+&lt;head&gt;&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;&lt;/head&gt;
+&lt;body&gt;
+' . $mensagem . '
+&lt;/body&gt;
+&lt;/html&gt;';
+
+$result = mail($email,'Conta Desativada',$mensagem,$headers);
+//Verifica se o e-mail foi enviado com Sucesso
+if(!$result) {   
+&nbsp;&nbsp;&nbsp;&nbsp;echo "Error";   
+} else {
+&nbsp;&nbsp;&nbsp;&nbsp;echo "Success";
+}	<br></pre>

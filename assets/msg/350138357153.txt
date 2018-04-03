@@ -1,0 +1,65 @@
+<pre class="prettyprint linenums:1">&lt;div id="teste"&gt;
+	
+&lt;/div&gt;
+
+&lt;script&gt;
+//faz a função 5 em 5 segundos
+setInterval(myTimer, 5000);
+
+function myTimer() {
+    var http = new XMLHttpRequest();
+	
+	var parametros = "teste=true";
+	
+	http.open("POST", "teste.php", true);
+
+	//Send the proper header information along with the request
+	http.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+	http.setRequestHeader("Content-length", parametros.length);
+	http.setRequestHeader("Connection", "close");
+
+	http.onreadystatechange = function() {//Call a function when the state changes.
+		if(http.readyState == 4 &amp;&amp; http.status == 200) {
+			if(http.responseText &gt;= 1)
+			{
+				document.getElementById('teste').innerHTML = http.responseText;
+			}
+			else{
+				document.getElementById('teste').innerHTML = "";
+			}	
+		}
+	}
+	http.send(parametros);
+}
+
+&lt;/script&gt;<br></pre><pre class="prettyprint linenums:1">&lt;?php
+		$servername = "localhost";
+		$username = "root";
+		$password = "";
+		$dbname = "testes";
+
+		// Create connection
+		$conn = mysqli_connect($servername,$username,"",$dbname);
+
+		// Check connection
+		if (!$conn) {
+		    die("Connection failed:".mysqli_connect_error());
+			echo "&lt;script&gt; alert('Erro na ligacao a base de dados')&lt;/script&gt;";
+			
+			}
+ 
+
+        $manynoti = 0;
+
+        $sql = "SELECT * FROM notificate WHERE noti=1";
+
+        $res = mysqli_query($conn,$sql);
+
+        while($row = mysqli_fetch_array($res))
+        {
+        	$manynoti++;
+        }
+	
+		echo $manynoti;
+	
+?&gt;<br></pre>

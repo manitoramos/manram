@@ -1,0 +1,14 @@
+Neste caso que vos vou mostrar a permissão se não tiveres login não consegue aceder as paginas que vocês assim entenderem.
+<br>
+Aqui mostro-vos como fazer com Sessões mas também podem fazer via base de dados.
+<pre class="prettyprint linenums:1">session_start();
+		
+if(!isset($_SESSION['user']))// se o user não tiver definido
+{
+	header ('Location: login.php');//redirecciona-vos para esta pagina
+}
+</pre>
+
+Agora para incluir na pagina que vocês querem que não tenham permissão para entrar sem login:
+<pre class="prettyprint linenums:1">include ('exemplo.php');
+</pre>

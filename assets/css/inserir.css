@@ -1,0 +1,17 @@
+.inpline{
+    display: inline !important;
+  }
+  .imgp{
+    width: 30px;
+    border-radius: 15px;
+    top: 100px !important;
+  }
+
+.marb{
+    margin-bottom: 4px;
+}
+
+/* Para fazer disabel a option no select2 */
+.select2-container--default .select2-results__option[aria-disabled=true] {
+    display: none;
+}

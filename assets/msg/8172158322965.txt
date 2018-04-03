@@ -1,0 +1,10 @@
+<pre class="prettyprint linenums:1">//if your urls is like this insert.php?type=account is be like this insert/account
+RewriteRule ^insert/(.*) insert.php?type=$1 [L]
+
+//like this is gonna be News?id=123&amp;uri=hey &lt;=&gt; News/123/hey
+RewriteRule ^News/(.*)/(.*)$ /News/$1&amp;$2 [L]
+
+//for something without [GET OR POST] is more simple
+//goona be account.php &lt;=&gt; account
+RewriteRule ^account/?$ account.php
+</pre>

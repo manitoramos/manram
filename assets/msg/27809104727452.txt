@@ -1,0 +1,1 @@
+<pre>$("#file-list-display &gt; tr:nth-child(1)").css( "background-color", "red" );</pre><p>#file-list-display é o nome da tabela</p><p>tr:nth-child(1)&nbsp;é a row a ser alterada neste caso é a primeira.</p>

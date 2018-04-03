@@ -1,0 +1,89 @@
+<pre class="prettyprint linenums:1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+	&lt;title&gt;testing&lt;/title&gt;
+	&lt;link href="assets/bootstrap-3.3.0/dist/css/bootstrap.css" rel="stylesheet"&gt;
+	
+    &lt;!-- JS --&gt;
+    &lt;script src='assets/js/jquery2.1.3.js'&gt;&lt;/script&gt;
+    &lt;script src="http://malsup.github.com/jquery.form.js"&gt;&lt;/script&gt; 
+    &lt;script src="assets/bootstrap-3.3.0/dist/js/bootstrap.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+&lt;form id='file-catcher'&gt;
+  &lt;input id='file-input' type='file' multiple/&gt;
+  &lt;button type='submit'&gt;
+    Submit
+  &lt;/button&gt;
+&lt;/form&gt;
+
+&lt;div id='file-list-display'&gt;&lt;/div&gt;
+
+&lt;div id="progress"&gt;&lt;/div&gt;
+&lt;script&gt;
+	(function () {
+	var fileCatcher = document.getElementById('file-catcher');
+  var fileInput = document.getElementById('file-input');
+  var fileListDisplay = document.getElementById('file-list-display');
+  
+  var fileList = [];
+  var renderFileList, sendFile;
+  
+  fileCatcher.addEventListener('submit', function (evnt) {
+  	evnt.preventDefault();
+    fileList.forEach(function (file) {
+    	sendFile(file);
+    });
+  });
+  
+  fileInput.addEventListener('change', function (evnt) {
+ 		fileList = [];
+  	for (var i = 0; i &lt; fileInput.files.length; i++) {
+    	fileList.push(fileInput.files[i]);
+    }
+    renderFileList();
+  });
+  
+  renderFileList = function () {
+  	fileListDisplay.innerHTML = '';
+    fileList.forEach(function (file, index) {
+    	var fileDisplayEl = document.createElement('p');
+      fileDisplayEl.innerHTML = (index + 1) + ': ' + file.name;
+      fileListDisplay.appendChild(fileDisplayEl);
+    });
+  };
+  
+  sendFile = function (file) {
+  	var formData = new FormData();
+    var request = new XMLHttpRequest();
+
+    request.upload.addEventListener('progress',function(e){
+
+    	document.querySelector('#progress').innerHTML = Math.round(e.loaded/e.total * 100) + '%';
+
+    },false)
+ 
+    formData.set('file', file);
+    request.open("POST", 'https://1fiafqj.oloadcdn.net/uls/AqLuPnF52XK_3SLw');
+    request.send(formData);
+
+	   request.onreadystatechange = function() {
+		if(request.readyState == 4 &amp;&amp; request.status == 200) 
+		{
+						
+						//console.log(http.responseText);
+						//$('#logs').text(request.responseText);
+						console.log(JSON.parse(request.responseText));//imprime em Json
+						
+		}
+	}
+  };
+})();
+
+
+&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+
+</pre>

@@ -1,0 +1,16 @@
+<pre class="prettyprint linenums:1">HTML:
+&lt;ul id="list"&gt;
+&lt;li id="element1"&gt;One&lt;/li&gt;
+&lt;li id="element2"&gt;Two&lt;/li&gt;
+&lt;li id="element3"&gt;Three&lt;/li&gt;
+&lt;/ul&gt;
+
+Javascript:
+function function1() {
+  var ul = document.getElementById("list");
+  var li = document.createElement("li");
+  li.appendChild(document.createTextNode("Four"));
+  li.setAttribute("id", "element4"); // added line
+  ul.appendChild(li);
+  //alert(li.id);
+} </pre>
