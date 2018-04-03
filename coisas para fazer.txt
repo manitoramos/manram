@@ -1,7 +1,6 @@
 Fazer subcategorias das categorias por causa de versoes anteriores ou superiores
 com um select 2 para poder escolher a versao que ele deseja
 
-
 -----------------------------------------------------------------------------------
 
 Se quiser fazer tipo laravel criar um .php para todas as pages a verificar
@@ -9,3 +8,10 @@ o endereço da pagina para ver qual pagina e que ele esta a tentar aceder
 com o $_SESSION mudar para um valor caso queira por categorias ou nao na pagina
 pretendida , tambem fazer php para as paginas de script e css caso seja preciso
 para tornar tudo parcido com o MVC
+
+
+-----------------------------------------------------------------------------------
+
+nas defenições meter uma opção para escolher uma password de segurança caso limpe
+o cache do sites para obter novamente o 'id' do cookie para ter tudo igual ao que
+tinha como antes

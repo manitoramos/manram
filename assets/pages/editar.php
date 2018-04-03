@@ -1,5 +1,15 @@
 <?php
-  include("../bd/bd.php");
+    include("../bd/bd.php");
+
+    $slc2 = "SELECT * FROM programacao WHERE id=144";
+
+    //VERIFICA SE FOI INSERIDA COM SUCESSO SENAO MANDA A MENSAGEM DE ERRO
+    if ($res2 =mysqli_query($BD, $slc2)) {
+        //SELECIONADA COM SUCESSO
+        $reg2 = mysqli_fetch_array($res2);
+    } else {
+            echo "Error: " . $slc2 . "<br>" . mysqli_error($BD);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -45,7 +55,7 @@
             <small>MyDatabase</small>
           </h1>-->
               <label style="font-size: 20px;" for="title">Manitoramos • <span style="color:orange;">Publicar</span></label>
-              <input id="title" type="text" name="title" class="form-control inpline col-md-4" placeholder="Titulo">
+              <input id="title" type="text" name="title" value="<?php echo $reg2['titulo']; ?>" class="form-control inpline col-md-4" placeholder="Titulo">
               <span style="float:right; vertical-align:middle;">
               <img class="imgp" src="../assets/img/goku.jpg">
               <small>A publicar como <b>Manito</b></small>
@@ -62,24 +72,26 @@
         <!-- ./END COL-MD-12 -->
 
         <div class="col-md-9">
-          <textarea id="summernote"></textarea>
+          <textarea id="summernote"><?php echo $reg2['mensagem']; ?></textarea>
         </div>
         <!-- ./END COL-MD-9 -->
         <div class="col-md-3">
           <div class="card marb">
             <div class="card-header">
               <select id="catg" class="js-example-basic-single form-control" name="state">
-              <option disabled selected>Escolha uma Categoria</option>
+              <option disabled>Escolha uma Categoria</option>
               <?php
                 $slc = "SELECT * FROM linguagem";
                 $res = mysqli_query($BD,$slc);
                 if($rowmsg = mysqli_num_rows($res) > 0){
                   while($reg = mysqli_fetch_array($res)){
                     if($reg['ling'] == "Csharp"){
-                      echo "<option value='{$reg['id']}'>C#</option>";
+                        if($reg['id'] == $reg2['cat_id']){echo "<option selected value='{$reg['id']}'>C#</option>";}
+                            else{echo "<option value='{$reg['id']}'>C#</option>";}
                     }
                     else{
-                      echo "<option value='{$reg['id']}'>{$reg['ling']}</option>";
+                        if($reg['id'] == $reg2['cat_id']){echo "<option selected value='{$reg['id']}'>{$reg['ling']}</option>";}
+                            else{echo "<option value='{$reg['id']}'>{$reg['ling']}</option>";}
                     }
                   }
                 }
@@ -101,7 +113,7 @@
               </div>
               <div id="hasht" class="collapse" aria-labelledby="hash" data-parent="#accordion">
                 <div class="card-body">
-                  <textarea id="hashs" class="form-control" style="max-height:120px;min-height:62px;"></textarea>
+                  <textarea id="hashs" class="form-control" style="max-height:120px;min-height:62px;"><?php echo $reg2['tags']; ?></textarea>
                   <small class="text-muted">Separar Hashtags com vírgulas</small>
                 </div>
               </div>
@@ -154,6 +166,10 @@
 
     <!-- Custom -->
     <script src="../assets/js/inserir.js"></script>
+
+    <!-- Prettify 
+     <link rel="stylesheet" href="../assets/highlighter/prettify.css" />
+    <script src="../assets/highlighter/prettify.js" ></script>-->
 
 
     <script>

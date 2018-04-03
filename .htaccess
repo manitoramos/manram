@@ -8,7 +8,7 @@ php_value max_input_time 300
 
 RewriteEngine on
 #RewriteRule ^post/create/?$ inserir.php [L]
-RewriteRule ^post/edit/?$ edit.php [L]
+RewriteRule ^post/edit/?$ assets/pages/editar.php [L]
 RewriteRule ^post/create/?$ assets/pages/inserir.php [L]
 
 
