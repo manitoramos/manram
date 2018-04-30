@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+    <title>Modal Login with jQuery Effects - Bootsnipp.com</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/open-iconic/font/css/open-iconic-bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+    <link href="assets/css/login.css" rel="stylesheet">
+    
+</head>
+<body>
+<!-- BEGIN # BOOTSNIP INFO -->
+<div class="container">
+	<div class="row">
+        <div class="col-md-12">
+            <h1 class="text-center">Modal Login with jQuery Effects</h1>
+            <p class="text-center"><a href="#" class="btn btn-primary btn-lg" role="button" data-toggle="modal" data-target="#login-modal">Open Login Modal</a></p>
+        </div>
+    </div>
+</div>
+<!-- END # BOOTSNIP INFO -->
+
+<!-- BEGIN # MODAL LOGIN -->
+<div class="modal fade" id="login-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="display: none;">
+    	<div class="modal-dialog">
+			<div class="modal-content">
+				<div class="modal-header">
+					<button style="font-size: 20px;" type="button" class="close" data-dismiss="modal" aria-label="Close">
+						<i class="fas fa-times"></i>
+                    </button>
+				</div>
+                
+                <!-- Begin # DIV Form -->
+                <div id="div-forms">
+                
+                    <!-- Begin # Login Form -->
+                    <form id="login-form">
+		                <div class="modal-body">
+				    		<div id="div-login-msg">
+                                <div id="icon-login-msg" class="fas fa-angle-right"></div>
+                                <span id="text-login-msg">Entre com a sua conta.</span>
+                            </div>
+				    		<input id="login_username" class="form-control" type="text" placeholder="Username" required>
+				    		<input id="login_password" class="form-control" type="password" placeholder="Password" required>
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox"> Remember me
+                                </label>
+                            </div>
+        		    	</div>
+				        <div class="modal-footer">
+                            <div class="container">
+                                <div class="row">
+                                            <button type="submit" class="btn btn-primary btn-lg btn-block">Entrar</button>
+                                            <button id="login_lost_btn" type="button" class="btn btn-link"><small>Esqueceste-te da senha?</small></button>
+                                            <button id="login_register_btn" type="button" class="btn btn-link"><small>Registar</small></button>
+                                </div>
+                            </div>
+				        </div>
+                    </form>
+                    <!-- End # Login Form -->
+                    
+                    <!-- Begin | Lost Password Form -->
+                    <form id="lost-form" style="display:none;">
+    	    		    <div class="modal-body">
+		    				<div id="div-lost-msg">
+                                <div id="icon-lost-msg" class="fas fa-angle-right"></div>
+                                <span id="text-lost-msg">Preencha o campo com o seu email.</span>
+                            </div>
+		    				<input id="lost_email" class="form-control" type="text" placeholder="E-Mail" required>
+            			</div>
+		    		    <div class="modal-footer">
+                            <div class="container">
+                                <div class="row">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block">Enviar</button>
+                                        <button id="lost_login_btn" type="button" class="btn btn-link"><small>Login</small></button>
+                                        <button id="lost_register_btn" type="button" class="btn btn-link"><small>Registar</small></button>
+                                </div>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Lost Password Form -->
+                    
+                    <!-- Begin | Register Form -->
+                    <form id="register-form" style="display:none;">
+            		    <div class="modal-body">
+		    				<div id="div-register-msg">
+                                <div id="icon-register-msg" class="fas fa-angle-right"></div>
+                                <span id="text-register-msg">Registar uma nova conta.</span>
+                            </div>
+		    				<input id="register_username" class="form-control" type="text" placeholder="Username" required>
+                            <input id="register_email" class="form-control" type="text" placeholder="E-Mail" required>
+                            <input id="register_password" class="form-control" type="password" placeholder="Password" required>
+            			</div>
+		    		    <div class="modal-footer">
+                            <div class="container">
+                                <div class="row">
+                                        <button type="submit" class="btn btn-primary btn-lg btn-block">Registar</button>
+                                        <button id="register_login_btn" type="button" class="btn btn-link"><small>Login</small></button>
+                                        <button id="register_lost_btn" type="button" class="btn btn-link"><small>Esqueceste-te da senha?</small></button>
+                                </div>
+                            </div>
+		    		    </div>
+                    </form>
+                    <!-- End | Register Form -->
+                    
+                </div>
+                <!-- End # DIV Form -->
+                
+			</div>
+		</div>
+	</div>
+    <!-- END # MODAL LOGIN -->
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/js/login.js"></script>
+</body>
+</html>

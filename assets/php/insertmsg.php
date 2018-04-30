@@ -2,6 +2,7 @@
 //VERIFICAR SE TASK TEM ALGUM VALOR CASO SEJA NULLO NAO FAZ NADA
 if(isset($_POST['task'])){
     include("../bd/bd.php");
+    date_default_timezone_set('Europe/Lisbon');
 }
 else{
     echo "tentativa sem resultado!!";
@@ -34,7 +35,7 @@ if($_POST['task'] == "pub")
             else{
                 /*if($i == $len -1){$newtags = $newtags . "#" . $value;}
                     else{$newtags = $newtags . "#" . $value . ",";}*/
-                    if ($value === end($tagss)){$newtags = $newtags . "#" . $value;}
+                    if ($value === end($tagss)){$newtags = $newtags . /*"#" .*/ $value;}
                             else{$newtags = $newtags . $value . ",";}
             }
             //$i++;
@@ -48,8 +49,8 @@ if($_POST['task'] == "pub")
     $date = date("Y-m-d h:i:s");
 
     //INSERIR NA BASEDADOS
-    $sql = "INSERT INTO programacao (user, tipo, cat_id, mensagem, titulo, tags, created_at, updated_at)
-    VALUES ('manito', 'teste', '{$_POST['catg']}', '{$msg}', '{$_POST['title']}' , '{$newtags}', '{$date}', '{$date}')";
+    $sql = "INSERT INTO programacao (user, tipo, cat_id, mensagem, titulo, tags, created_at, updated_at, updated_by)
+    VALUES ('manito', 'teste', '{$_POST['catg']}', '{$msg}', '{$_POST['title']}' , '{$newtags}', '{$date}', '{$date}', 'manito')";
 
     //VERIFICA SE FOI INSERIDA COM SUCESSO SENAO MANDA A MENSAGEM DE ERRO
     if (mysqli_query($BD, $sql)) {

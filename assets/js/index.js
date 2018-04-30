@@ -97,7 +97,7 @@ $("#cardmsg").hide();
 $('#dataTables-example').ready(function() {//limpar a tabela
 	setTimeout(function(){ 
 		$('#dataTables-example').DataTable().clear().draw(); 
-	}, 1000);
+	}, 1);
 });
 
 toastr.options = {

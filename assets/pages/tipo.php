@@ -79,7 +79,7 @@
 
 			//close if
 		}
-		
+		mysqli_close($con);
 	?>
   </div>
 </div>

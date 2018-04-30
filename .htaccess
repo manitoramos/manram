@@ -8,8 +8,13 @@ php_value max_input_time 300
 
 RewriteEngine on
 #RewriteRule ^post/create/?$ inserir.php [L]
-RewriteRule ^post/edit/?$ assets/pages/editar.php [L]
-RewriteRule ^post/create/?$ assets/pages/inserir.php [L]
+RewriteRule ^post@edit/?$ assets/pages/editar.php [L]
+RewriteRule ^post@create/?$ assets/pages/inserir.php [L]
+RewriteRule ^home/?$ index.php [L]
+
+
+#Alternate default index page
+DirectoryIndex index.php
 
 
 # DO NOT REMOVE THIS LINE AND THE LINES BELOW ERRORPAGEID:uQesaN

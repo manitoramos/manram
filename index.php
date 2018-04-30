@@ -1,5 +1,5 @@
 <?php
-  session_start();
+  include("assets/php/gerarid.php");
   include("assets/bd/bd.php");
 ?>
 <!DOCTYPE html>
@@ -79,9 +79,6 @@
 
     <?php include('assets/pages/inc/footer.php') ?>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- DATA TABLE SCRIPTS -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js"></script>
@@ -102,9 +99,9 @@
             $(document).ready(function () {
                 $('#dataTables-example').DataTable( {
                 /* dom: 'Bfrtip',
-        buttons: [
-            'copy', 'csv', 'excel', 'pdf', 'print'
-        ]
+                  buttons: [
+                      'copy', 'csv', 'excel', 'pdf', 'print'
+                  ]
             */} );
                 
             });

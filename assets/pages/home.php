@@ -34,6 +34,7 @@
                 //echo "Error: " . $slct . "<br>" . mysqli_error($BD);//return to javascript
             }
 
+            mysqli_close($con);
           ?>
 
           <!-- Blog Post -->

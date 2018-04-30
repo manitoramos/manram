@@ -1,4 +1,5 @@
 <?php
+  include("../php/gerarid.php");
   include("../bd/bd.php");
 ?>
 <!DOCTYPE html>
@@ -14,14 +15,11 @@
     <title>Home</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-
-    <!-- Font awesome -->
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl" crossorigin="anonymous"></script>
+    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="../assets/css/index-home.css" rel="stylesheet">
-    <link href="../assets/css/inserir.css" rel="stylesheet">
+    <link href="assets/css/index-home.css" rel="stylesheet">
+    <link href="assets/css/inserir.css" rel="stylesheet">
 
      <!-- Toastr -->
      <link rel="stylesheet" type="text/css" href="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css"/>
@@ -96,7 +94,7 @@
           <div class="card marb">
               <div class="card-header" id="hash">
                 <a style="cursor:pointer;" data-toggle="collapse" data-target="#hasht" aria-expanded="true" aria-controls="hasht">
-                  <h6 class="text-left"><i class="fas fa-tags"></i> Hashtags</h6>
+                  <h6 class="text-left"><i class="fas fa-tags"></i> Tags</h6>
                 </a>
               </div>
               <div id="hasht" class="collapse" aria-labelledby="hash" data-parent="#accordion">
@@ -137,13 +135,9 @@
     <!-- Footer -->
     <?php include('inc/footer.php') ?>
 
-    <!-- Bootstrap core JavaScript -->
-    <script src="../vendor/jquery/jquery.min.js"></script>
-    <script src="../vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
     <!-- Summernote -->
-    <link href="../assets/summernote/summernote-bs4.css" rel="stylesheet">
-    <script src="../assets/summernote/summernote-bs4.js"></script>
+    <link href="assets/summernote/summernote-bs4.css" rel="stylesheet">
+    <script src="assets/summernote/summernote-bs4.js"></script>
 
     <!-- Select2 -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
@@ -153,7 +147,7 @@
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
 
     <!-- Custom -->
-    <script src="../assets/js/inserir.js"></script>
+    <script src="assets/js/inserir.js"></script>
 
 
     <script>
