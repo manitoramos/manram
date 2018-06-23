@@ -116,6 +116,7 @@
 				else{
 					//password errada
 					echo "falsepass";
+					exit();
 				}
 				//Para testes
 				//echo " [ " . $carcript;
@@ -124,6 +125,7 @@
 			else{
 				//esse utilizador nao existe
 				echo "falseuser";
+				exit();
 			}
 		} else {
 			echo "Error: " . $sql . "<br>" . mysqli_error($BD);//erro ao selecionar na basedados
@@ -152,5 +154,25 @@
 	else if($_POST['task'] == "forgetpass")
 	{
 		//codigo para quando se esquece do email da conta
+		$email = $_POST['mail'];
+
+		$slc = "SELECT * FROM users WHERE email='{$email}'";
+
+		if ($ress=mysqli_query($BD, $slc)) {
+			//selecionado com sucesso
+			$rowcount=mysqli_num_rows($ress);//contar rows selecionadas
+			if($rowcount == 1){
+				$reg = mysqli_fetch_array($ress);
+					
+			}
+			else{
+				//nao existe nenhuma conta associada a este email
+				echo "falsemail";
+				exit();
+			}
+		}else{
+			echo "Error: " . $sql . "<br>" . mysqli_error($BD);//erro na basedados
+			exit();
+		}
 	}
 ?>

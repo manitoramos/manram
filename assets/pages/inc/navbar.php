@@ -48,6 +48,28 @@
                 <!--<span class="sr-only">(current)</span>-->
               </a>
             </li>
+            
+            <!-- // ADMIN //
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Admin
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="/post@create">Inserir Registo</a>
+                <a class="dropdown-item" href="#">Inserir Linguagem</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="/post@edit">Atualizar Registo</a>
+                <a class="dropdown-item" href="#">Apagar Registo</a>
+              </div>
+            </li>
+            // ADMIN //-->
+
+            <li class="nav-item">
+              <a class="nav-link" href="#">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Contact</a>
+            </li>
             <!-- AFTER LOGIN --><!-- AFTER LOGIN --><!-- AFTER LOGIN --><!-- AFTER LOGIN --><!-- AFTER LOGIN -->
             <!-- AFTER LOGIN --><!-- AFTER LOGIN --><!-- AFTER LOGIN --><!-- AFTER LOGIN --><!-- AFTER LOGIN -->
             <!-- AFTER LOGIN --><!-- AFTER LOGIN --><!-- AFTER LOGIN --><!-- AFTER LOGIN --><!-- AFTER LOGIN -->
@@ -102,24 +124,6 @@
             <!-- END AFTER LOGIN --><!-- END AFTER LOGIN --><!-- END AFTER LOGIN --><!-- END AFTER LOGIN -->
             <!-- END AFTER LOGIN --><!-- END AFTER LOGIN --><!-- END AFTER LOGIN --><!-- END AFTER LOGIN -->
             <!-- END AFTER LOGIN --><!-- END AFTER LOGIN --><!-- END AFTER LOGIN --><!-- END AFTER LOGIN -->
-            <li class="nav-item dropdown">
-              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Admin
-              </a>
-              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                <a class="dropdown-item" href="/post@create">Inserir Registo</a>
-                <a class="dropdown-item" href="#">Inserir Linguagem</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="/post@edit">Atualizar Registo</a>
-                <a class="dropdown-item" href="#">Apagar Registo</a>
-              </div>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">About</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" href="#">Contact</a>
-            </li>
             <li class="nav-item">
               <a class="nav-link" style="cursor:pointer;" role="button" data-toggle="modal" data-target="#login-modal">Login</a>
             </li>

@@ -79,7 +79,8 @@
 
 			//close if
 		}
-		mysqli_close($con);
+		//fechar a conexao a basedados
+		//mysqli_close($BD);
 	?>
   </div>
 </div>

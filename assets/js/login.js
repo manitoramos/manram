@@ -17,25 +17,53 @@ $(function() {
                 //verificar os inputs antes de mandar para a validação php
                 var $lg_username=$('#login_username').val();
                 var $lg_password=$('#login_password').val();
-                if ($lg_username == "ERROR") {
+                /*if ($lg_username == "ERROR") {
                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "fa-times", "Login error");
                 } else {
                     msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "fa-check", "Login OK");
-                }
+                }*/
+                //Load
+                $('#gg1').hide();
+                $('#gg2').hide();
+                $('#loaderlog').show();
+                setTimeout(function(){
                 $.ajax({
                     url: "../assets/php/account.php",
                     type: "POST",
                     data: { task: "login", user: $lg_username, pass: $lg_password },
                     success: function(data)
                     {
-                        console.log(data);
+                        //consola para testes
+                        //console.log(data);
+                        if(data == "logsuc"){
+                            msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "success", "fa-check", "Sera feito o login brevemente!");
+                            setTimeout(function(){
+                                $('#login-modal').modal('hide');
+                            }, 700);//1000 seconds so para testes depois meter 100
+                        }
+                        else if(data == "falsepass"){
+                            msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "fa-times", "Password incorreta!!");
+                            $('#loaderlog').hide();
+                            $('#gg1').show();
+                            $('#gg2').show();
+                        }
+                        else if(data == "falseuser"){
+                            msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "fa-times", "Username inexistente.");
+                            $('#loaderlog').hide();
+                            $('#gg1').show();
+                            $('#gg2').show();
+                        }
                     },
                       error: function(data) 
                     {
-                        //code
-                        //console.log(data);
+                        msgChange($('#div-login-msg'), $('#icon-login-msg'), $('#text-login-msg'), "error", "fa-times", "Erro no servidor, tente outravez!");
+                        $('#gg1').show();
+                        $('#gg2').show();
+                        toastr["error"]("Algo de errado aconteceu!! tente novamente.");
+                        console.log('Algo de errado aconteceu!! tente novamente.');
                     } 	        
                 });
+                }, 1000);//1000 seconds so para testes depois meter 100
                 return false;
                 break;
             //************************************************

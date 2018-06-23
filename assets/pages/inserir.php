@@ -34,7 +34,7 @@
     <!-- Page Content -->
     <div class="container">
     <form id="msgpub" method='post' enctype='multipart/form-data'>
-      <div class="row">
+      <div class="row" style="">
         
         <!-- Blog Entries Column -->
         <div class="col-md-12" style="">
@@ -100,7 +100,8 @@
               <div id="hasht" class="collapse" aria-labelledby="hash" data-parent="#accordion">
                 <div class="card-body">
                   <textarea id="hashs" class="form-control" style="max-height:120px;min-height:62px;"></textarea>
-                  <small class="text-muted">Separar Hashtags com vírgulas</small>
+                  <small class="text-muted">Separar Tags com vírgulas</small><br>
+                  <small class="text-muted">Ex: lul,lul2</small>
                 </div>
               </div>
             </div>

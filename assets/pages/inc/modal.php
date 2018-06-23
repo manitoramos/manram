@@ -18,15 +18,17 @@
                                 <div id="icon-login-msg" class="fas fa-angle-right fa-xs"></div>
                                 <span id="text-login-msg">Entre com a sua conta.</span>
                             </div>
-				    		<input id="login_username" class="form-control fm_ctr" type="text" placeholder="Username" required>
-				    		<input id="login_password" class="form-control fm_ctr" type="password" placeholder="Password" required>
-                            <div class="checkbox">
-                                <label>
-                                    <input type="checkbox"> Remember me
-                                </label>
+                            <div id="gg1">
+                                <input id="login_username" class="form-control fm_ctr" type="text" placeholder="Username" required>
+                                <input id="login_password" class="form-control fm_ctr" type="password" placeholder="Password" required>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox"> Lembrar
+                                    </label>
+                                </div>
                             </div>
         		    	</div>
-				        <div class="modal-footer">
+				        <div id="gg2" class="modal-footer">
                             <div class="container">
                                 <div class="row">
                                             <button type="submit" class="btn btn2 btn-primary btn-lg btn-block">Entrar</button>
@@ -34,7 +36,7 @@
                                             <button id="login_register_btn" type="button" class="btn btn-link"><small>Registar</small></button>
                                 </div>
                             </div>
-				        </div>
+                        </div>
                     </form>
                     <!-- End # Login Form -->
                     
@@ -83,6 +85,13 @@
 		    		    </div>
                     </form>
                     <!-- End | Register Form -->
+
+                    <!-- Begin | Loader Form -->
+                    <div id="loaderlog" style="display:none;">
+                        <img id="img2" src="assets/giphy.gif" style="position:absolute;width:100px;top:90px;right:120px;">
+                        <br><br><br><br>
+                    </div>
+                    <!-- END | Loader Form -->
                     
                 </div>
                 <!-- End # DIV Form -->

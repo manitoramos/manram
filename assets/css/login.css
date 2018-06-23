@@ -141,3 +141,18 @@
 .fa-angle-right{
     font-size: 20px;
 }
+
+/* ###############################
+   #         AFTER LOGIN         #
+   ############################### */
+.navbar-expand-lg .navbar-nav .dropdown-menu{
+    position: absolute;
+    right: 0;
+    left: auto;
+}
+
+/*#login2{
+    background-image: url(assets/loader.gif);
+    top:-150px;
+    right:-25px;
+}*/

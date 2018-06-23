@@ -29,13 +29,13 @@ if($_POST['task'] == "pub")
             {
                 /*if($i == $len -1){$newtags = $newtags . $value;}
                     else{$newtags = $newtags . $value . ",";}*/
-                        if ($value === end($tagss)){$newtags = $newtags . $value;}
+                        if ($value === end($tagss)){$newtags = $newtags . $value;}//verifica se é a ultima tag
                             else{$newtags = $newtags . $value . ",";}
             } 
             else{
                 /*if($i == $len -1){$newtags = $newtags . "#" . $value;}
                     else{$newtags = $newtags . "#" . $value . ",";}*/
-                    if ($value === end($tagss)){$newtags = $newtags . /*"#" .*/ $value;}
+                    if ($value === end($tagss)){$newtags = $newtags . /*"#" .*/ $value;}//verifica se é a ultima tag
                             else{$newtags = $newtags . $value . ",";}
             }
             //$i++;
@@ -49,12 +49,12 @@ if($_POST['task'] == "pub")
     $date = date("Y-m-d h:i:s");
 
     //INSERIR NA BASEDADOS
-    $sql = "INSERT INTO programacao (user, tipo, cat_id, mensagem, titulo, tags, created_at, updated_at, updated_by)
+    $sql = "INSERT INTO programacao (user, tipo, cat_id, mensagem, titulo, tags, created_at, updated_at, created_by)
     VALUES ('manito', 'teste', '{$_POST['catg']}', '{$msg}', '{$_POST['title']}' , '{$newtags}', '{$date}', '{$date}', 'manito')";
 
     //VERIFICA SE FOI INSERIDA COM SUCESSO SENAO MANDA A MENSAGEM DE ERRO
     if (mysqli_query($BD, $sql)) {
-        echo "New record created successfully";
+        echo "1";//publicação criada com Sucesso
     } else {
         echo "Error: " . $sql . "<br>" . mysqli_error($BD);
     }
