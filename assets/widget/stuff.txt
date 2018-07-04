@@ -1,0 +1,1 @@
+poder adicionar ficheiros php para depois no admin poder escolher as widgets a apresentar na pagina

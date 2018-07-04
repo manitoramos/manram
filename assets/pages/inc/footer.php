@@ -33,9 +33,10 @@
     
 <!-- MODAL DE LOGIN -->
 <?php
-if($_SERVER['REQUEST_URI'] == "/home" || $_SERVER['REQUEST_URI'] == "/" || $_SERVER['REQUEST_URI'] == ""){
-  include('assets/pages/inc/modal.php');
-}else{
-  include('inc/modal.php');
-}
+  //Fazer uma array caso precise de mais exeções
+  if($_SERVER['REQUEST_URI'] == "/home" || $_SERVER['REQUEST_URI'] == "/" || $_SERVER['REQUEST_URI'] == "" || $_SERVER['REQUEST_URI'] == '/manitoramos/' || $_SERVER['REQUEST_URI'] == '/newsite/'){
+    include('assets/pages/inc/modal.php');
+  }else{
+    include('inc/modal.php');
+  }
 ?>
