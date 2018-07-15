@@ -6,7 +6,7 @@ function reloadtable(pop){//LIMPAR A TABELA E PREENCHER COM OS NOVOS DADOS DAS C
             success: function(data) {
                 //console.log(data);
 
-                if(data == "falsecat")
+                if(data == "falsecat")//categoria sem conteudo para apresentar
                 {
 					toastr["warning"]("A categoria selecionada ainda não tem conteudo!");
                 	return 0;
