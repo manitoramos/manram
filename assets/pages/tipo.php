@@ -43,7 +43,7 @@
         </tbody>
     </table>
 </div>
-<br>
+<br><!-- Card MSG -->
 <div class="card" id="cardmsg">
   <div class="card-header">
 	<b style="font-size: 25px;" id="titlemsg">
@@ -57,7 +57,8 @@
 
 			if($resmsg){
 				$regmsg = mysqli_fetch_array($resmsg);
-				echo $regmsg['titulo'];
+				//echo $regmsg['titulo'];
+				echo htmlentities($regmsg['titulo'], ENT_COMPAT,'ISO-8859-1', true);
 			}
 		}
 		

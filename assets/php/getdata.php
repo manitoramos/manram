@@ -56,7 +56,7 @@
 			exit();
 		}
 		else{
-			$_SESSION['msgid'] = $_POST['responsee'];
+			$_SESSION['msgid'] = $_POST['responsee'];//sessao fica com o id da mensagem que é para apresentar
 
 			//UPDATE NOS HITS DA MENSAGEM SELECIONADA
 			$uphits = "UPDATE programacao SET Hits=Hits+1 WHERE id='{$_POST['responsee']}'";
